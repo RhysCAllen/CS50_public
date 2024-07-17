@@ -1,6 +1,6 @@
 # CS50_public
 
-#### This repo contains the README.md files submitted with my final projects for HarvardX courses CS50x and CS50P.  
+#### This repo contains the README.md files submitted with my final projects for HarvardX CS50x and CS50P.  
 <br>
     
 Harvard and MIT created edX in 2012 as a way to offer massively online open courses (MOOCs) free to the public.  
