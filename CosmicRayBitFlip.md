@@ -4,7 +4,7 @@ For simulation and quantification of cosmic ray bit flips in DNA sequence data
 
 
 ##### Video demo: 
-[![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/CRBS_thumbnail.png)](https://github.com/RhysCAllen/CS50_public/blob/main/BitFlip.mov)
+[![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/CRBS_thumbnail.png)](https://vimeo.com/985784183)
 
 
 
