@@ -2,7 +2,7 @@
 For interactive simulation of the Maxwell-Boltzmann distribution of kinetic energies of gases
 
 ##### Video demo: 
-[![Watch the video](paste url to thumbnail.png here )](https://github.com/RhysCAllen/CS50_public/blob/main/files/MB_fakedata.mp4)
+[![Watch the video]()](https://github.com/RhysCAllen/CS50_public/blob/main/files/MB_fakedata.mp4)
 
 ##### REQUIREMENTS:
 
