@@ -13,7 +13,7 @@ Ubuntu clang version 14.0.0-1ubuntu1.1
 <br>
 
 ##### Video demo: 
-[![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/CRBS_thumbnail.png)](https://vimeo.com/985784183)
+[![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/CRBS_thumbnail.png)](https://vimeo.com/985784183)
 
 
 ##### HOW TO RUN:
