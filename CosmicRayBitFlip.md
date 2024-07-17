@@ -1,12 +1,16 @@
 
 # Cosmic Ray Bit Flip Simulator
-For simulation and quantification of cosmic ray bit flips in DNA sequence data
+#### For simulation and quantification of cosmic ray bit flips in DNA sequence data
+<br>
+<br>
 
 ##### REQUIREMENTS:
 Flask==2.3.2 \
 JavaScript ES7 \
 Python==3.11.4 \
 Ubuntu clang version 14.0.0-1ubuntu1.1
+<br>
+<br>
 
 ##### Video demo: 
 [![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/CRBS_thumbnail.png)](https://vimeo.com/985784183)
@@ -27,6 +31,9 @@ Finally, navigate to the `/frontend` folder and run the web app: \
 ##### CONTACT ME:
 31254709+RhysCAllen@users.noreply.github.com
 
+<br>
+<br>
+
 #### Project Summary
 This repository was submitted in partial fulfllment of the requirements for CS50x: Introduction to Computer Science (Harvard University via edX), 2023. This is the final project for the class.
 
@@ -35,7 +42,6 @@ My long-term programming goal is to learn scientific computation: using the powe
 #### Skills previously used during cs50x:
     -C, Python, flask, jinja, HTML, CSS, JavaScript
     -Writing a dynamic web app
-
 #### Skills new for this project:
     -learn about cosmic ray bit flips, and implement a bit flip simulator for DNA sequence in C
     -using ctypes to import my custom C library into Python
@@ -51,7 +57,6 @@ My long-term programming goal is to learn scientific computation: using the powe
         -Additional database-scale simulation scoped to page (pixels rather than DNA bases)
         -Update randomization of DNA base selection from Fisher-Yates to binomial probability
         -Improve aesthetics with CSS, such as adding Dark Mode.
-<br>
 <br>
 <br>
 
@@ -70,7 +75,6 @@ The simplicity of DNA data, containing just 4 letters, might make it a good test
 *Part 2* was to research cosmic ray bit flip information and render a quantitatively accurate simulation of it in C. The program will ideally be able to simulate bit flips, and independently detect bit flips. What is the variation in rates of cosmic ray irradiation on the surface of Earth? How much radiation is required before a bit flip is likely to occur? And, how would would bit flips specifically change the DNA sequence stored on the irradiated database servers? Might we be able to create a 'sentinal' program that does post-hoc detection and correction of bit-flipped sequences of DNA in our database repositories? The result of part 2 is the creation of a C library that simulates pseudo-random bit flips from a DNA sequence.
 
 *Part 3* Is to animate the results of the C program on an interactive web page with the help of Flask and JavaScript.
-<br>
 <br>
 <br>
 
@@ -103,6 +107,7 @@ the setTimeout() function combined with HTML elements allowed me to show one DNA
 I used layout.html to establish common web page features such as the navigation bar. I extended layout.html for specific web page features such as the DNA string 'mutation' animation.
 I learned how to use JavaScript's Fetch API so that the DNA animation would not require that the web page reload after the user submitted their DNA input. I used the setTimeout() function to simulate animation by updating innerHTML after regular time intervals.
 <br>
+<br>
 
 ##### FAQs about gamma rays, DNA databases, bit flips, etc. from project results
 Q: Are some or all bit flips in DNA sequence detectable? If so, can they be corrected? \
@@ -116,7 +121,6 @@ A: Yes, humans and other organisms also absorb cosmic rays, and if it reaches th
 
 Q. Are bit flips too rare to matter on Earth? How many bit flips happen on my desktop computer per year? Is there a way that backend engineers can protect servers storing sensitive data from bit flips, or detect when bit flips occur? \
 A. Interestingly, cosmic ray bit flips are a real concern in modern super computing. The concern mostly relates to the "standard" RAM (DRAM), as this presents the largest and ever-growing target for cosmic rays. Petascale supercomputers have O(10-100 TB) of DRAM, growing to Exascale: O(1-100 PB) of DRAM in the future. Modern hard drives use Error Correction Codes (algorithms that detect and correct bit flips from various sources). In space, techniques such as radiation hardening (computer chips made from specially treated silicon) to protect against bit flips. Other missions may use redundant copies of essential programs for real-time detection and correction using version control.
-<br>
 <br>
 <br>
 
