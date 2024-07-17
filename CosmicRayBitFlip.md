@@ -2,10 +2,11 @@
 # Cosmic Ray Bit Flip Simulator
 For simulation and quantification of cosmic ray bit flips in DNA sequence data
 
-##### Video demo: 
+
 
 [![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/CRBS_thumbnail.png)](https://www.vimeo.com/985784183)
 
+##### Video demo: 
 
 ##### REQUIREMENTS:
 Flask==2.3.2 \
