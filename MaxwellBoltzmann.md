@@ -4,9 +4,9 @@ For interactive simulation of the Maxwell-Boltzmann distribution of kinetic ener
 ##### Video demo: 
 [![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/MB_titlecard.jpg)](https://raw.githubusercontent.com/RhysCAllen/CS50_public/main/files/MB_fakedata.mp4)
 
-[![Watch the video](https://raw.githubusercontent.com/RhysCAllen/CS50_public/blob/main/files/MB_titlecard.jpg)]()
+[![Watch the video](https://raw.githubusercontent.com/RhysCAllen/CS50_public/blob/main/files/MB_titlecard.jpg)](https://raw.githubusercontent.com/RhysCAllen/CS50_public/main/files/MB_fakedata.mp4)
 
-https://raw.githubusercontent.com/RhysCAllen/CS50_public/main/MaxwellBoltzmann.md?token=GHSAT0AAAAAACTDEX3YKZTWMKDTLNM4HPH2ZUYKMIA
+
 
 
 
