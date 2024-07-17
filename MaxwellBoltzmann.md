@@ -1,7 +1,8 @@
 # Maxwell-Boltzmann Animation
 For interactive simulation of the Maxwell-Boltzmann distribution of kinetic energies of gases
 
-##### Video demo: <link>
+##### Video demo: 
+[![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/CRBS_thumbnail.png)](https://vimeo.com/985784183)
 
 ##### REQUIREMENTS:
 
