@@ -26,7 +26,7 @@ Finally, navigate to the `/frontend` folder and run the web app: \
 31254709+RhysCAllen@users.noreply.github.com
 
 #### Project Summary
-This repository was submitted in partial fulfllment of the requirements for CS50x: Introduction to Computer Science (Harvard University via EdX), 2023. This is the final project for the class.
+This repository was submitted in partial fulfllment of the requirements for CS50x: Introduction to Computer Science (Harvard University via edX), 2023. This is the final project for the class.
 
 My long-term programming goal is to learn scientific computation: using the power of computers to create, analyze, and visualize scientific discoveries, especially related to microbiology. I chose to focus on writing web applications for this project in order to combine the speed and power of C, with the data science libraries and web-based visualizations of Python and JavaScript. This project helped me work towards my goals as a scientist and programmer.
 
