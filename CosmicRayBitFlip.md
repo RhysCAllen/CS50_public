@@ -1,38 +1,26 @@
 
 # Cosmic Ray Bit Flip Simulator
 #### For simulation and quantification of cosmic ray bit flips in DNA sequence data
-<br>
-<br>
-
 ##### REQUIREMENTS:
 Flask==2.3.2 \
 JavaScript ES7 \
 Python==3.11.4 \
 Ubuntu clang version 14.0.0-1ubuntu1.1
+##### HOW TO RUN:
+With a free GitHub.com account, the repo can be cloned and run within a codespace.
+From the codespace terminal, navigate to the `/project` folder and compile the files: \
+`$ clang -o duckie duckie.c cJSON.c -lm`
+Then, create a shared library file: \
+`$ clang -fPIC -shared -o duckie.so duckie.c cJSON.c`
+Finally, navigate to the `/frontend` folder and run the web app: \
+`$ flask run`
+##### CONTACT ME:
+31254709+RhysCAllen@users.noreply.github.com
 <br>
 <br>
 
 ##### Video demo: 
 [![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/CRBS_thumbnail.png)](https://vimeo.com/985784183)
-
-
-##### HOW TO RUN:
-With a free GitHub.com account, the repo can be cloned and run within a codespace.
-
-From the codespace terminal, navigate to the `/project` folder and compile the files: \
-`$ clang -o duckie duckie.c cJSON.c -lm`
-
-Then, create a shared library file: \
-`$ clang -fPIC -shared -o duckie.so duckie.c cJSON.c`
-
-Finally, navigate to the `/frontend` folder and run the web app: \
-`$ flask run`
-
-##### CONTACT ME:
-31254709+RhysCAllen@users.noreply.github.com
-
-<br>
-<br>
 
 #### Project Summary
 This repository was submitted in partial fulfllment of the requirements for CS50x: Introduction to Computer Science (Harvard University via edX), 2023. This is the final project for the class.
