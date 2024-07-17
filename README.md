@@ -14,7 +14,7 @@ However, because final projects are counted towards completion of a graded cours
 ### CS50x: Introduction to Computer Science
 
 Data structures and algorithms in C. 
-Topics include abstraction, sorting and searching algorithms, primitive and abstract data types, encapsulation, dynamic memory resource management, security, software engineering, and web programming. Languages include C, Python, and SQL, plus HTML, CSS, and JavaScript.
+Topics include abstraction, sorting and searching algorithms, primitives and abstract data structures, encapsulation, dynamic memory resource management, security, software engineering, and web programming. Languages include C, Python, and SQL, plus HTML, CSS, and JavaScript.
 
 <img src = "https://certificates.cs50.io/a55d244c-46c3-4ba2-ac7e-ab521c5d7189.png?size=100x" width=200 align=left alt="" title="Certificate of Completion CS50x"/>
 
