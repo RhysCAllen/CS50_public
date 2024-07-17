@@ -1,4 +1,4 @@
-# Interactive Maxwell-Boltzmann animation
+# Maxwell-Boltzmann Animation
 For interactive simulation of the Maxwell-Boltzmann distribution of kinetic energies of gases
 
 ##### Video demo: <link>
