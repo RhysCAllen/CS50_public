@@ -4,6 +4,8 @@ For simulation and quantification of cosmic ray bit flips in DNA sequence data
 
 ##### Video demo: <https://vimeo.com/985784183>
 
+[![Video Title](https://img.vimeo.com/vi/985784183/0.jpg)](https://www.vimeo.com/watch?v=985784183)
+
 ##### REQUIREMENTS:
 Flask==2.3.2 \
 JavaScript ES7 \
