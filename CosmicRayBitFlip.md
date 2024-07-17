@@ -2,7 +2,7 @@
 # Cosmic Ray Bit Flip Simulator
 For simulation and quantification of cosmic ray bit flips in DNA sequence data
 
-##### Video demo: <https://vimeo.com/876041189>
+##### Video demo: <https://vimeo.com/985784183>
 
 ##### REQUIREMENTS:
 Flask==2.3.2 \
