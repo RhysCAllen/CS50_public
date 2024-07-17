@@ -34,13 +34,11 @@ My long-term programming goal is to learn scientific computation: using the powe
     -learn about cosmic ray bit flips, and implement a bit flip simulator for DNA sequence in C
     -using ctypes to import my custom C library into Python
     -working with JSON string objects in C, and Fetch API in JavaScript
-
 #### Features
     Basic implementation:
         -An interactive flask web app of bit flip simulation in DNA sequences
         -User input of parameters such as DNA target size and amount of radiation.
         -Output is animation simulating bit flips according to user parameters
-
     Stretch goals:
         -Additional database-scale simulation scoped to page (pixels rather than DNA bases)
         -Update randomization of DNA base selection from Fisher-Yates to binomial probability
@@ -49,8 +47,7 @@ My long-term programming goal is to learn scientific computation: using the powe
 <br>
 
 #### Description: project background and goals
-The original inspiration for this project came from this article, suggesting that modern large-scale databases can detect changes in cosmic radiation:
-https://blog.mozilla.org/data/2022/04/13/this-week-in-glean-what-flips-your-bit/
+The original inspiration for this project came from <a href="https://blog.mozilla.org/data/2022/04/13/this-week-in-glean-what-flips-your-bit/"> this article </a>, suggesting that modern large-scale databases can detect changes in cosmic radiation.
 
 All computers are cosmic ray detectors. Any time a cosmic ray hits a computer chip, it can change a bit (from 0 to 1, for example). Does this matter? How often do bit flips occur?
 
