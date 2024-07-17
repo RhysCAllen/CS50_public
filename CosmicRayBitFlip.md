@@ -49,6 +49,7 @@ My long-term programming goal is to learn scientific computation: using the powe
         -Additional database-scale simulation scoped to page (pixels rather than DNA bases)
         -Update randomization of DNA base selection from Fisher-Yates to binomial probability
         -Improve aesthetics with CSS, such as adding Dark Mode.
+<br>
 
 #### Description: project background and goals
 The original inspiration for this project came from this article, suggesting that modern large-scale databases can detect changes in cosmic radiation:
@@ -65,6 +66,7 @@ The simplicity of DNA data, containing just 4 letters, might make it a good test
 *Part 2* was to research cosmic ray bit flip information and render a quantitatively accurate simulation of it in C. The program will ideally be able to simulate bit flips, and independently detect bit flips. What is the variation in rates of cosmic ray irradiation on the surface of Earth? How much radiation is required before a bit flip is likely to occur? And, how would would bit flips specifically change the DNA sequence stored on the irradiated database servers? Might we be able to create a 'sentinal' program that does post-hoc detection and correction of bit-flipped sequences of DNA in our database repositories? The result of part 2 is the creation of a C library that simulates pseudo-random bit flips from a DNA sequence.
 
 *Part 3* Is to animate the results of the C program on an interactive web page with the help of Flask and JavaScript.
+<br>
 
 #### Annotated repo contents: files created, decisions made, obstacles encountered, and project outcomes.
 
@@ -94,6 +96,7 @@ the setTimeout() function combined with HTML elements allowed me to show one DNA
 ###### file name: string.js
 I used layout.html to establish common web page features such as the navigation bar. I extended layout.html for specific web page features such as the DNA string 'mutation' animation.
 I learned how to use JavaScript's Fetch API so that the DNA animation would not require that the web page reload after the user submitted their DNA input. I used the setTimeout() function to simulate animation by updating innerHTML after regular time intervals.
+<br>
 
 ##### FAQs about gamma rays, DNA databases, bit flips, etc. from project results
 Q: Are some or all bit flips in DNA sequence detectable? If so, can they be corrected? \
@@ -107,9 +110,9 @@ A: Yes, humans and other organisms also absorb cosmic rays, and if it reaches th
 
 Q. Are bit flips too rare to matter on Earth? How many bit flips happen on my desktop computer per year? Is there a way that backend engineers can protect servers storing sensitive data from bit flips, or detect when bit flips occur? \
 A. Interestingly, cosmic ray bit flips are a real concern in modern super computing. The concern mostly relates to the "standard" RAM (DRAM), as this presents the largest and ever-growing target for cosmic rays. Petascale supercomputers have O(10-100 TB) of DRAM, growing to Exascale: O(1-100 PB) of DRAM in the future. Modern hard drives use Error Correction Codes (algorithms that detect and correct bit flips from various sources). In space, techniques such as radiation hardening (computer chips made from specially treated silicon) to protect against bit flips. Other missions may use redundant copies of essential programs for real-time detection and correction using version control.
+<br>
 
-
-##### References:
+##### References
 
 General overview and real-world examples of bit flips affecting video games, commercial airline flights, and election outcome from computerized ballots:
 https://www.youtube.com/watch?v=AaZ_RSt0KP8
