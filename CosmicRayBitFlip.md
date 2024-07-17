@@ -6,6 +6,12 @@ For simulation and quantification of cosmic ray bit flips in DNA sequence data
 
 [![Video Title](https://img.vimeo.com/vi/985784183/0.jpg)](https://www.vimeo.com/watch?v=985784183)
 
+[![Video_Embed]( ](https://www.vimeo.com/985784183)
+
+[![Watch the video](https://img.youtube.com/vi/_5tFXJQIzi4/0.jpg)](https://www.youtube.com/watch?v=_5tFXJQIzi4)
+
+<div style="padding:58.23% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/985784183?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BitFlip"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
 ##### REQUIREMENTS:
 Flask==2.3.2 \
 JavaScript ES7 \
