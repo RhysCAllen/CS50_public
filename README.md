@@ -21,4 +21,4 @@ Topics include abstraction, sorting and searching algorithms, primitives and abs
 ### CS50P: Introduction to Python
 
 Object-oriented programming in Python. 
-Topics include handling exceptions, debugging, unit testing; introduction to third-party libraries; validate and extract data with regular expressions; model real-world entities with classes, objects, methods, and properties. 
+Topics include handling exceptions, debugging, unit testing, libraries; validate and extract data with regular expressions; model real-world entities with classes, objects, methods, and properties. 
