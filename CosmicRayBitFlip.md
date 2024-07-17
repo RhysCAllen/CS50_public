@@ -83,7 +83,7 @@ I initially chose an array of structs as my bitflip.c output, in order to includ
 
  ###### file name: app.py
  C integration:
- I researched several options for combining C and Python, including writing a Python extension module for my C functions. The simpler solution of using the ctypes module was sufficient for this project. I created a library of my C functions, and imported them to my flask app using the Python ctypes module.
+ I researched several options for combining C and Python, including writing a Python extension module for my C functions. The simpler solution of using the ctypes module was sufficient for this project. I created a library of my C functions, and imported my C functions to the flask app using the Python ctypes module.
 
  Animation:
 Flask supports animations through streaming templates, by wrapping a route function around a second generate() function.
