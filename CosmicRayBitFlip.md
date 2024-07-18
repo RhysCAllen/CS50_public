@@ -5,15 +5,19 @@
 Flask==2.3.2 \
 JavaScript ES7 \
 Python==3.11.4 \
-Ubuntu clang version 14.0.0-1ubuntu1.1
+clang==14.0.0-1ubuntu1.1 
 ## HOW TO RUN:
 With a free GitHub.com account, the repo can be cloned and run within a codespace.
-From the codespace terminal, navigate to the `/project` folder and compile the files: \
+
+From the codespace terminal, navigate to the `/project` folder and compile the files:  
 `$ clang -o duckie duckie.c cJSON.c -lm`
+
 Then, create a shared library file: \
 `$ clang -fPIC -shared -o duckie.so duckie.c cJSON.c`
+
 Finally, navigate to the `/frontend` folder and run the web app: \
 `$ flask run`
+
 ## CONTACT ME:
 31254709+RhysCAllen@users.noreply.github.com
 <br>
@@ -25,7 +29,8 @@ https://github.com/user-attachments/assets/ab136362-2d68-4385-94c4-a565c431d30d
 This repository was submitted in partial fulfllment of the requirements for CS50x: Introduction to Computer Science (Harvard University via edX), 2023. This is the final project for the class.
 
 My long-term programming goal is to learn scientific computing: using the power of computers to create, analyze, and visualize scientific discoveries, especially related to microbiology. I chose to focus on writing web applications for this project in order to combine the speed and power of C, with the data science libraries and web-based visualizations of Python and JavaScript. This project helped me work towards my goals as a scientist and programmer.
-
+<br>
+<br>
 ### Skills previously used during CS50x:
     -C, Python, flask, jinja, HTML, CSS, JavaScript
     -Writing a dynamic web app
@@ -42,8 +47,6 @@ My long-term programming goal is to learn scientific computing: using the power 
         -Additional database-scale simulation scoped to page (pixels rather than DNA bases)
         -Update randomization of DNA base selection from Fisher-Yates to binomial probability
         -Improve aesthetics with CSS, such as adding Dark Mode.
-<br>
-<br>
 
 ### Description: project background and goals
 The original inspiration for this project came from <a href="https://blog.mozilla.org/data/2022/04/13/this-week-in-glean-what-flips-your-bit/"> this article </a>, suggesting that modern large-scale databases can detect changes in cosmic radiation.
@@ -54,11 +57,11 @@ Bit flips are similar to DNA mutations called SNPs, or single nucleotide polymor
 
 The simplicity of DNA data, containing just 4 letters, might make it a good test subject for bit flip simulation and detection. Bioinformatic tools could be used to detect and analyze DNA 'mutations' created by simulated bit flips. Outside of simulations, real-world sequence repositaries like the National Center for Bioinformatic Information have extra protections against cosmic rays for long-term storage of DNA sequence.  If a bit flip occurred and changed the world's digital record of a DNA reference genome, would we even know? If so, could we fix it?
 
-*Part 1* of this project is to see what I could find out about whether the world's largest DNA databases monitor or protect against cosmic ray bit flips. These databases have a lot of redundancy: many of the same genome sequences are stored in different databases across the globe. But, the databases are also quite large, too large for comprehensive version control, so if one database had a bit flip, how would we know which record is the correct one? I was curious if I could find any info about this. The results of part 1 include links in the FAQs section below.
+__PART 1__ of this project is to see what I could find out about whether the world's largest DNA databases monitor or protect against cosmic ray bit flips. These databases have a lot of redundancy: many of the same genome sequences are stored in different databases across the globe. But, the databases are also quite large, too large for comprehensive version control, so if one database had a bit flip, how would we know which record is the correct one? I was curious if I could find any info about this. The results of part 1 include links in the FAQs section below.
 
-*Part 2* was to research cosmic ray bit flip information and render a quantitatively accurate simulation of it in C. The program will ideally be able to simulate bit flips, and independently detect bit flips. What is the variation in rates of cosmic ray irradiation on the surface of Earth? How much radiation is required before a bit flip is likely to occur? And, how would would bit flips specifically change the DNA sequence stored on the irradiated database servers? Might we be able to create a 'sentinal' program that does post-hoc detection and correction of bit-flipped sequences of DNA in our database repositories? The result of part 2 is the creation of a C library that simulates pseudo-random bit flips from a DNA sequence.
+__PART 2__ is to research cosmic ray bit flip information and render a quantitatively accurate simulation of it in C. The program will ideally be able to simulate bit flips, and independently detect bit flips. What is the variation in rates of cosmic ray irradiation on the surface of Earth? How much radiation is required before a bit flip is likely to occur? And, how would would bit flips specifically change the DNA sequence stored on the irradiated database servers? Might we be able to create a 'sentinal' program that does post-hoc detection and correction of bit-flipped sequences of DNA in our database repositories? The result of part 2 is the creation of a C library that simulates pseudo-random bit flips from a DNA sequence.
 
-*Part 3* Is to animate the results of the C program on an interactive web page with the help of Flask and JavaScript.
+__PART 3__ Is to animate the results of the C program on an interactive web page with the help of Flask and JavaScript.
 <br>
 <br>
 
