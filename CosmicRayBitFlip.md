@@ -22,7 +22,11 @@ Finally, navigate to the `/frontend` folder and run the web app: \
 ##### Video demo: 
 [![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/CRBS_thumbnail.png)](https://vimeo.com/985784183)
 
-https://github.com/user-attachments/assets/586900e8-c9e2-4be2-bfab-af369ccb196a
+
+
+https://github.com/user-attachments/assets/45ed3ba1-5bc2-44c4-bf75-7b67322a563e
+
+
 
 
 #### Project Summary
