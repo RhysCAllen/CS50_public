@@ -36,7 +36,7 @@ To view the resulting simulation, open the animation file: \
 ### Project Summary
 This repository will be submitted towards fulfllment of the requirements for CS50P: Introduction to Programming with Python (Harvard University via edX), 2024. This is the final project for the class.
 
-My long-term goal is to be able to write programs that showcase scientific analysis, especially related to microbiology. This project allows me to explore the <a href="https://fortran-lang.discourse.group/t/ten-computer-codes-that-transformed-science/595"> famous </a> CBLAS library: basic linear algebra subroutines for C. I also wanted to compare my previous experience of using HTML for visualization, with Python's powerful animation libraries. This project is helping me reach my long-term goal to understand and share scientific discoveries via computing. 
+My long-term goal is to be able to write programs that showcase scientific analysis, especially related to microbiology. This project allows me to explore the <a href="https://fortran-lang.discourse.group/t/ten-computer-codes-that-transformed-science/595"> famous</a> CBLAS library: basic linear algebra subroutines for C. I also wanted to decide whether HTML-based animation (previous project) or desktop-based animation (Python) worked better for me as a programmer. This project is helping me reach my long-term goal to understand and share scientific discoveries via computing. 
 
 ### Skills previously used during CS50:
     -Writing and binding dynamically linked C libraries to Python
@@ -58,7 +58,7 @@ My long-term goal is to be able to write programs that showcase scientific analy
 
 ### Description: project background and goals
 
-The original inspiration for this project came from the <a href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution"> Wikipedia article </a> about the Maxwell-Boltzmann distribution. As a chemistry tutor, this topic is important to chemical reaction rates and equilibria. Seeing the animation on the Wikipedia page made me want to recreate it as a tribute to one of my favorite topics in chemistry, and to grow my programming skills for creating interactive science simulations.
+The original inspiration for this project came from the Wikipedia article about the <a href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution">Maxwell-Boltzmann distribution</a>. As a chemistry tutor, I grew to appreciate how effectively this distribution helps students understand the relationship between temperature, chemical rates, and chemical equilibria. Seeing the animation on the Wikipedia page made me want to recreate it as a tribute to one of my favorite topics in chemistry, and to grow my programming skills for creating interactive science simulations.
 
 Thermometers are essentially speedometers for molecules. When we place a thermometer in a sample, we are getting an estimate of the average speed at which its molecules are colliding.  However, temperature is a macroscopic property: on a molecular level, particles have a range of speeds, some faster and some slower. The average speeds determine the given temperature. The probability of what speeds are present for a single temperature is predicted by the Maxwell-Boltzmann distribution.
 
@@ -86,60 +86,61 @@ __PART 2__ Write a C library to accurately calculate the particle dynamics (elas
 
 __PART 3__ Combine parts 1 and 2 for a functioning animation of particle collisions in 2D space.
 
-__PROJECT STATUS:__ Part 1 is complete. Part 3 is partially complete. Part 2 is underway. 
+__PROJECT STATUS:__ Parts 1 and 3 are complete. Part 2 is underway. 
 
 ### Annotated repo contents: files created, decisions made, obstacles encountered, and project outcomes.
 
  ###### file name: project.py
-Animation:
-I researched a variety of Python libaries that supported interactive animations. Candidates included manim ("math animations") (Grant Sanderson, <a href="https://www.youtube.com/c/3blue1brown"> 3Blue1Brown <a>). GUI options including Vulcan, Metal, vpython (GlowScript),  OpenGL, pyqt5 and tkinter. I decided against GUI options and opted for a base case of creating an animated video using matplot.animate (pyplot). This worked well with my stretch goal of adding interactivity with plotly and dash Python libraries, and pytorch for very computationally intensive future projects.  
+Animation:  
+I researched a variety of Python libaries that supported interactive animations. Candidates included manim ("math animations") (Grant Sanderson, <a href="https://www.youtube.com/c/3blue1brown">3Blue1Brown<a>). GUI options including Vulcan, Metal, vpython (GlowScript),  OpenGL, pyqt5 and tkinter. I decided against GUI options and opted for a base case of creating an animated video using matplot.animate (pyplot). This worked well with my stretch goal of adding interactivity with plotly and dash Python libraries, and pytorch for very computationally intensive future projects.  
 
-I also found a variety of dedicated software communities for certain types of scientific animations. <a href="https://en.wikipedia.org/wiki/CompuCell3D"> CompuCell3D <a> for the cellular Potts model (cells growing over a surface). <a href="https://web.archive.org/web/20210920063153/https://journals.plos.org/ploscompbiol/article?rev=2&id=10.1371/journal.pcbi.1006220"> Tellurium </a>, a Jupyter notebook that includes built-in support for animation of scientific models and is compliant with the synthetic biology <a href="https://co.mbine.org/"> standard registry of parts.<a> These are useful for highly specialized mathematical modeling and simulation of specific processes, and were great to discover, if not relevant for the current project. 
+I also found a variety of dedicated software communities for certain types of scientific animations. <a href="https://en.wikipedia.org/wiki/CompuCell3D">CompuCell3D<a> for the cellular Potts model (cells growing over a surface). <a href="https://web.archive.org/web/20210920063153/https://journals.plos.org/ploscompbiol/article?rev=2&id=10.1371/journal.pcbi.1006220">Tellurium</a>, a Jupyter notebook that includes built-in support for animation of scientific models and is compliant with the synthetic biology <a href="https://co.mbine.org/">standard registry of parts.<a> These are useful for highly specialized mathematical modeling and simulation of specific processes, and were great to discover, if not relevant for the current project. 
 
-Data types:
-My decisions on what data structures to use were determined first by what could be animated. All animation is essentially a flip-book of freeze-frame images that are shown in a time series. The faster the frame rate, the smoother and more realistic the animation, at the expense of processing power and time. The computer science of video animation is developed to a high level of sophistication, including specialized chips (GPU) that render a series of frame images into a continous video stream. A critical determination in computer animation is whether your images will be real-time rendered, such as for a video game that creates each frame just before rendering and streaming. This is distinct from video effects that created and rendered first, then streamed at a later date. 
+Data types:  
+My decisions on what data structures to use were determined first by what could be animated. All animation is essentially a flip-book of freeze-frame images that are shown in a time series. The faster the frame rate, the smoother and more realistic the animation, at the expense of processing power and time. The computer science of video animation is developed to a high level of sophistication, including specialized chips (GPU) that render a series of frame images into a continous video stream. A critical determination in computer animation is whether your images will be created and rendered in real time, such as video games, or whether it will be rendered ahead of time and streamed at a later date, like movies in theaters. 
 
-I sought out an experienced animator on Discord to determine whether my animation would need to be real-time rendered, for example by using a python generate() function for each frame. It turned out that matplotlib.animate only offers two-step animation (rendering first; streaming later). matplotlib.animate does offer the option of 'object-order' (a single particle is updated) or  'image-order' (the entire plot is updated each frame). Due to the number of particles, I chose an 'image-order' animation strategy: I would calculate the new positions for all the particles, once per frame. That meant representing a frame as a 3D array, where the first two dimensions were particle position and velocity, and the final dimension was the number of particles per frame. 
+I sought out an <a href="https://www.youtube.com/c/PrimerLearning/videos">experienced animator</a> on Discord for advice. I wanted to determine whether my animation would need to be real-time rendered, for example by using a python generate() function for each frame. It turned out that matplotlib.animate only offers two-step animation (rendering first; streaming later). matplotlib.animate does offer the option of 'object-order' (a single particle is updated) or  'image-order' (the entire plot is updated each frame). Due to the number of particles, I chose an 'image-order' animation strategy: I would calculate the new positions for all the particles, once per frame. That meant representing a frame as a 3D array, where the first two dimensions were particle position and velocity, and the final dimension was the number of particles per frame. 
 
-C integration:
+C integration:  
 I imported the Python cytpes library in order to bind my C library functions and import them into Python. 
 
 It was necessary to cast my NumPy arrays to 32-bit floats, otherwise the different float sizes created an interesting effect where an array with the same pointer address appeared to have different values in C vs Python. In fact it was the different stride length (array element size of 32-bit vs 64-bit) that created this illusion. 
 
 Each time the frame is updated in the python animate() function, it is passed by reference to C where the new particle positions are calculated. The relationship between the frame rate and the particle speed is controlled in order to illustrate a smooth animation of continuous particle motion. 
 
- ###### file name: particles.c
-CBLAS: 
-Accessing linear algebra functions from CBLAS was accomplished via <a href="https://www.netlib.org/atlas/"> ATLAS </a>. This was a welcome discovery as the complexity of accessing CBLAS from <a href="https://www.netlib.org/blas/"> source files </a> ported in Ubuntu was challenging for me. The original documentation for CBLAS was opaque compared to more current tutorials avialable online on how to use certain functions. 
+###### file name: particles.c
+CBLAS:  
+The complexity of accessing CBLAS from <a href="https://www.netlib.org/blas/">source files</a> ported in Ubuntu was challenging for me. <a href="https://www.netlib.org/atlas/">ATLAS</a> was a welcome discovery as it greatly simplified and optimized working with CBLAS in codespace. Additionally, ATLAS automatically tunes the CBLAS library to the user's specific machine architecture for maximum performace. 
 
-Data types: 
-I took inspiration from CBLAS on how use pointer arithmetic to access vectors of position and velocity from my 3D particle frame. Vectors (1D arrays) and matrices (multi-dimensional arrays) are the standard units of calculation for linear algebra. The vector is represented as the start (array index), stride (calculated by multiplying dimension lengths) and length (number of elements). This allowed me to access and update particle kinetics by reference rather than copying data. Representing the particle physics with vectors also made the logic of the K-D tree for particle dynamics much easier to write and to read. 
+Data types:  
+I took inspiration from CBLAS on how use pointer arithmetic to access vectors of position and velocity from my 3D particle frame. Vectors (1D arrays) and matrices (multi-dimensional arrays) are the standard units of calculation for linear algebra. The vector is represented as the start (array index), stride (calculated by multiplying dimension lengths) and length (number of elements). This allowed me to access and update particle kinetics by reference rather than copying data. Representing the particle physics algoritms with vectors also made the logic of the program easier to write and to read. 
 
-K-D tree: 
+Particle Dynamics:  
+The physics of particle collisions is very simple if one assumes elastic collisions where kinetic energy and momentum are conserved. However, I would need to understand both the linear algebra of calculating particle dynamics, and also how to computationally manage potentially hundreds of particle interactions per frame. Thankfully I happened to find excellent references for both. 
+The linear algebra of elastic particle collisions was described <a href="https://www.vobarian.com/collisions/2dcollisions2.pdf">here</a>. 
+The programming and computation strategies for keeping track of hundreds of independently moving objects in one frame was discussed at a high level <a href="https://www.youtube.com/watch?v=eED4bSkYCB8">here</a>.
 
+I chose the space partitioning technique described, which divides the frame (Cartesian plane plot) into sections iteratively in order to sort which particles are colliding, and which are not. The sorting is accomplished by a K-D tree, and the nodes of the tree are particles that are sent to wall_collision() or particles_collision() for updating their speed and trajectory. 
 
 ### References
 
-The original animation:
+The original animation that inspired this project:
 https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution#/media/File:Simulation_of_gas_for_relaxation_demonstration.gif
 
-Youtube channel that I used to identify some libraries I could use to get the effects I wanted (interactive animation and simulation).
-I did not watch the full video, just the first few minutes to see the libraries he chose.
-Mr. P Solver, youtube:
-https://www.youtube.com/watch?v=2XckqFzUiYU
+YouTube video that discussed how to programmatically and computationally manage hundreds of independently moving particles.
+https://www.youtube.com/watch?v=eED4bSkYCB8
 
-History and development of the M-B distribution:
-https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution
-https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_statistics
+Linear algebra of elastic particle collisions:  
+https://www.vobarian.com/collisions/2dcollisions2.pdf
+
+History and development of the M-B distribution:  
+https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution  
+https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_statistics  
 https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Physical_Chemistry_(LibreTexts)/27%3A_The_Kinetic_Theory_of_Gases/27.03%3A_The_Distribution_of_Molecular_Speeds_is_Given_by_the_Maxwell-Boltzmann_Distribution
 
-The Chi-squared distribution:
+The chi-squared distribution:  
 https://en.wikipedia.org/wiki/Chi-squared_distribution
 
-The Arrhenius equation:
+The Arrhenius equation: 
 https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/06%3A_Modeling_Reaction_Kinetics/6.02%3A_Temperature_Dependence_of_Reaction_Rates/6.2.03%3A_The_Arrhenius_Law/6.2.3.01%3A_Arrhenius_Equation
 
-
-General Chemistry background:
-
-Atkins link
