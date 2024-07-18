@@ -23,7 +23,7 @@ Finally, navigate to the `/frontend` folder and run the web app: \
 [![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/CRBS_thumbnail.png)](https://vimeo.com/985784183)
 
 
-[![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/CRBS_thumbnail.png)](https://raw.githubusercontent.com/RhysCAllen/CS50_public/main/files/BitFlip.mov?token=GHSAT0AAAAAACTDEX3ZLOW2NLLKU5SAB7CMZUYL3FA)
+[![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/CRBS_thumbnail.png)](https://raw.githubusercontent.com/RhysCAllen/CS50_public/main/files/BitFlip.mov)
 
 
 #### Project Summary
