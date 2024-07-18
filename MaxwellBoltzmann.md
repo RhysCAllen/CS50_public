@@ -5,6 +5,10 @@ For interactive simulation of the Maxwell-Boltzmann distribution of kinetic ener
 [![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/MB_titlecard.jpg)](https://vimeo.com/986104026)
 
 
+https://github.com/user-attachments/assets/ce21fe62-b436-4d13-a9ae-645a8c0472f0
+
+
+
 ##### REQUIREMENTS:
 
 matplotlib 3.8.3
