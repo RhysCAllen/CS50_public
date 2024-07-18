@@ -22,6 +22,8 @@ Finally, navigate to the `/frontend` folder and run the web app: \
 ##### Video demo: 
 [![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/CRBS_thumbnail.png)](https://vimeo.com/985784183)
 
+[![Watch the video](https://github.com/RhysCAllen/CS50_public/blob/main/files/CRBS_thumbnail.png)]([https://raw.githubusercontent.com/yourusername/yourrepository/main/assets/video.mp4](https://raw.githubusercontent.com/RhysCAllen/CS50_public/main/files/BitFlip.mov?token=GHSAT0AAAAAACTDEX3ZLOW2NLLKU5SAB7CMZUYL3FA))
+
 #### Project Summary
 This repository was submitted in partial fulfllment of the requirements for CS50x: Introduction to Computer Science (Harvard University via edX), 2023. This is the final project for the class.
 
