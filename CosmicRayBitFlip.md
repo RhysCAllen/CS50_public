@@ -1,12 +1,12 @@
 
 # Cosmic Ray Bit Flip Simulator
 #### For simulation and quantification of cosmic ray bit flips in DNA sequence data
-##### REQUIREMENTS:
+## REQUIREMENTS:
 Flask==2.3.2 \
 JavaScript ES7 \
 Python==3.11.4 \
 Ubuntu clang version 14.0.0-1ubuntu1.1
-##### HOW TO RUN:
+## HOW TO RUN:
 With a free GitHub.com account, the repo can be cloned and run within a codespace.
 From the codespace terminal, navigate to the `/project` folder and compile the files: \
 `$ clang -o duckie duckie.c cJSON.c -lm`
@@ -14,26 +14,26 @@ Then, create a shared library file: \
 `$ clang -fPIC -shared -o duckie.so duckie.c cJSON.c`
 Finally, navigate to the `/frontend` folder and run the web app: \
 `$ flask run`
-##### CONTACT ME:
+## CONTACT ME:
 31254709+RhysCAllen@users.noreply.github.com
 <br>
 
 https://github.com/user-attachments/assets/ab136362-2d68-4385-94c4-a565c431d30d
 
 
-#### Project Summary
+### Project Summary
 This repository was submitted in partial fulfllment of the requirements for CS50x: Introduction to Computer Science (Harvard University via edX), 2023. This is the final project for the class.
 
 My long-term programming goal is to learn scientific computing: using the power of computers to create, analyze, and visualize scientific discoveries, especially related to microbiology. I chose to focus on writing web applications for this project in order to combine the speed and power of C, with the data science libraries and web-based visualizations of Python and JavaScript. This project helped me work towards my goals as a scientist and programmer.
 
-#### Skills previously used during CS50x:
+### Skills previously used during CS50x:
     -C, Python, flask, jinja, HTML, CSS, JavaScript
     -Writing a dynamic web app
-#### Skills new for this project:
+### Skills new for this project:
     -learn about cosmic ray bit flips, and implement a bit flip simulator for DNA sequence in C
     -using ctypes to import my custom C library into Python
     -working with JSON string objects in C, and Fetch API in JavaScript
-#### Features
+### Features
     Basic implementation:
         -An interactive flask web app of bit flip simulation in DNA sequences
         -User input of parameters such as DNA target size and amount of radiation.
@@ -62,7 +62,7 @@ The simplicity of DNA data, containing just 4 letters, might make it a good test
 <br>
 <br>
 
-#### Annotated repo contents: files created, decisions made, obstacles encountered, and project outcomes.
+### Annotated repo contents: files created, decisions made, obstacles encountered, and project outcomes.
 
  ###### file name: duckie.c
 Cosmic ray bit flips are rare events, meaning that they occur singly, while their neighboring bits nearby remain unaffected.
@@ -77,7 +77,7 @@ For the animation, I wanted to simulate a saturation of random mutagenesis (all 
 Data types:
 I initially chose an array of structs as my bitflip.c output, in order to include a DNA string field and its corresponding mutated DNA base char index field, for each mutation. I was unable to parse an array of structs in JavaScript, so I refactored the entire project using an array of JSON object strings instead, by including cJSON.h software from a third party. Because JSON objects, like Python dictionaries, do not have inherent order, I was concerned that the mutation order would be lost when parsed with JavaScript, interfering with the animation. However, I learned that order is preserved with JSON object strings in the newest version of JavaScript (ES7) for my use case. Unfortunately, I web browsers deploy JavaScript versions unevenly and incompletely, so my program will not animate mutations in the correct order on older web browsers.
 
- ###### file name: app.py
+ ### file name: app.py
  C integration:
  I researched several options for combining C and Python, including writing a Python extension module for my C functions. The simpler solution of using the ctypes module was sufficient for this project. I created a dynamically linked library of my C functions, and imported to my flask app using the Python ctypes module.
 
@@ -87,13 +87,13 @@ Flask supports animations through streaming templates, by wrapping a route funct
 For replacement, I can do something more complicated with flask, or I can send my animation all at once, and control the animation with JS. The documentation and Discord support for Flask was insufficient for me at this time. Instead, I used
 the setTimeout() function combined with HTML elements allowed me to show one DNA string replaced by another, to simulate an animation with JavaScript.
 
-###### file name: string.js
+### file name: string.js
 I used layout.html to establish common web page features such as the navigation bar. I extended layout.html for specific web page features such as the DNA string 'mutation' animation.
 I learned how to use JavaScript's Fetch API so that the DNA animation would not require that the web page reload after the user submitted their DNA input. I used the setTimeout() function to simulate animation by updating innerHTML after regular time intervals.
 <br>
 <br>
 
-##### FAQs about gamma rays, DNA databases, bit flips, etc. from project results
+### FAQs about gamma rays, DNA databases, bit flips, etc. from project results
 Q: Are some or all bit flips in DNA sequence detectable? If so, can they be corrected? \
 A: Yes, most bit flips of DNA sequence stored in a computer (both real and simulated) are detectable. Of the total possible bit flip mutations for a single DNA base (letter), 95% or 243 / 255 are detectable. Only those flips that convert one of the four bases to another, such as A --> T, are undetectable post-hoc, unless it is directly compared to a reference known to be free of mutations (version control), or other software method (Hamming code).
 
@@ -108,7 +108,7 @@ A. Interestingly, cosmic ray bit flips are a real concern in modern super comput
 <br>
 <br>
 
-##### References
+### References
 
 General overview and real-world examples of bit flips affecting video games, commercial airline flights, and election outcome from computerized ballots:
 https://www.youtube.com/watch?v=AaZ_RSt0KP8
