@@ -45,7 +45,7 @@ My long-term programming goal is to learn scientific computing: using the power 
 <br>
 <br>
 
-#### Description: project background and goals
+### Description: project background and goals
 The original inspiration for this project came from <a href="https://blog.mozilla.org/data/2022/04/13/this-week-in-glean-what-flips-your-bit/"> this article </a>, suggesting that modern large-scale databases can detect changes in cosmic radiation.
 
 All computers are cosmic ray detectors. Any time a cosmic ray hits a computer chip, it can change a bit (from 0 to 1, for example). Does this matter? How often do bit flips occur?
@@ -77,7 +77,7 @@ For the animation, I wanted to simulate a saturation of random mutagenesis (all 
 Data types:
 I initially chose an array of structs as my bitflip.c output, in order to include a DNA string field and its corresponding mutated DNA base char index field, for each mutation. I was unable to parse an array of structs in JavaScript, so I refactored the entire project using an array of JSON object strings instead, by including cJSON.h software from a third party. Because JSON objects, like Python dictionaries, do not have inherent order, I was concerned that the mutation order would be lost when parsed with JavaScript, interfering with the animation. However, I learned that order is preserved with JSON object strings in the newest version of JavaScript (ES7) for my use case. Unfortunately, I web browsers deploy JavaScript versions unevenly and incompletely, so my program will not animate mutations in the correct order on older web browsers.
 
- ### file name: app.py
+ ###### file name: app.py
  C integration:
  I researched several options for combining C and Python, including writing a Python extension module for my C functions. The simpler solution of using the ctypes module was sufficient for this project. I created a dynamically linked library of my C functions, and imported to my flask app using the Python ctypes module.
 
@@ -87,7 +87,7 @@ Flask supports animations through streaming templates, by wrapping a route funct
 For replacement, I can do something more complicated with flask, or I can send my animation all at once, and control the animation with JS. The documentation and Discord support for Flask was insufficient for me at this time. Instead, I used
 the setTimeout() function combined with HTML elements allowed me to show one DNA string replaced by another, to simulate an animation with JavaScript.
 
-### file name: string.js
+###### file name: string.js
 I used layout.html to establish common web page features such as the navigation bar. I extended layout.html for specific web page features such as the DNA string 'mutation' animation.
 I learned how to use JavaScript's Fetch API so that the DNA animation would not require that the web page reload after the user submitted their DNA input. I used the setTimeout() function to simulate animation by updating innerHTML after regular time intervals.
 <br>
