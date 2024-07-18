@@ -3,115 +3,109 @@ For interactive simulation of the Maxwell-Boltzmann distribution of kinetic ener
 
 ##### Video demo:
 
-
 https://github.com/user-attachments/assets/0efe9a2c-95a2-43b6-8339-1d010c4d7bd8
-
-
 
 ##### REQUIREMENTS:
 
-matplotlib 3.8.3
-python -m pip install scipy: from scipy.stats import chi2
-sudo apt-get install liblapacke-dev
-wget lapacke.h
-sudo apt-get install ffmpeg
-JavaScript ES7
-Python==3.11.4
-Ubuntu clang version 14.0.0-1ubuntu1.1
+Ubuntu 22.04.4 LTS (Jammy Jellyfish)
+Python==3.12.2
+clang==14.0.0-1ubuntu1.1
+libatlas-base-dev==3.10.3-12ubuntu1
+matplotlib==3.8.3
+scipy==1.13.1
+ffmpeg==7:4.4.2-0ubuntu0.22.04.1
 
 ##### HOW TO RUN:
 With a free GitHub.com account, the repo can be cloned and run within a codespace.
 
-From the codespace terminal, navigate to the /project folder and compile the files:
-$ clang -o duckie duckie.c cJSON.c -lm
+From the codespace terminal, navigate to the /project/backend/ folder and compile the files:
+
+$ clang -o particles particles.c -lcblas
 
 Then, create a shared library file:
-$ clang -fPIC -shared -o duckie.so duckie.c cJSON.c
 
-Finally, navigate to the /frontend folder and run the web app:
-$ flask run
+$ clang -fPIC -shared -o particles.so particles.c -lcblas
+
+Finally, navigate to the /project folder and run the app:
+$ python project.py
+
+To view the resulting simulation, open the animation file:
+$ code movie.mp4
 
 
 ##### CONTACT ME:
 31254709+RhysCAllen@users.noreply.github.com
 
 #### Project Summary
-This repository was submitted in partial fulfllment of the requirements for CS50p: Introduction to Programming with Python (Harvard University via EdX), 2024. This is the final project for the class.
+This repository will be submitted towards fulfllment of the requirements for CS50P: Introduction to Programming with Python (Harvard University via edX), 2024. This is the final project for the class.
 
-My long-term goal is to be able to write programs that showcase scientific analysis. For this project, I chose to animate an interactive simulation, because it would allow me to combine the speed and power of C, with the data science libraries and data visualization capabilities of Python. This project helped me work towards my goals as a scientist and programmer.
+My long-term goal is to be able to write programs that showcase scientific analysis, especially related to microbiology. This project allows me to explore the <a href="https://fortran-lang.discourse.group/t/ten-computer-codes-that-transformed-science/595" famous </a> CBLAS library: basic linear algebra subroutines for C. I also wanted to compare my previous experience of programming interactive simulations using JavaScript and HTML, with using Python's powerful interactive animation libraries, matplotlib.animation, plotly, and dash. This project is helping me reach my long-term goal to understand and share scientific discoveries via computing. 
 
-#### Skills previously used during cs50:
-    -Writing and importing C libraries into Python
+#### Skills previously used during CS50:
+    -Writing and binding dynamically linked C libraries to Python
 
 #### Skills new for this project:
-    -Model parameters of Maxwell-Boltzmann distribution with linear algebra
+    -Model parameters of Maxwell-Boltzmann probability distribution for elastic collisions
+    -Using CBLAS, a basic linear algebra library for C, to calculate particle dynamics
+    -Write and navigate a K-D tree in C for space-partitioning of particles in each animation frame
     -Using matplotlib.animation in Python
-    -writing and navigating a K-D tree in C for space-partitioning of each animation frame
 
 #### Features
     Basic implementation:
-        -Non-interactive; two particles bouncing around a square 2D frame
-        -User input of parameters such as temperature and what type of particles (eg oxygen, neon, etc).
+        -Non-interactive particles bouncing around a square 2D frame, with display of actual vs theoretical particle energies
+        -User input of parameters such as temperature and what type of particles (e.g. oxygen, neon, etc.)
 
     Stretch goals:
-        -An interactive simulation that shows a probability distribution of gas particle kinetics
-        -Refactor using Pytorch for large sample size (Google Cloud VM with GPU for using tensors instead of matrices)
-        -color
-
+        -An interactive simulation that adjusts to user inputs of activation energy and temperature on reaction rates and Keq
+        -color to better illustrate conservation of energy during collisions
 
 #### Description: project background and goals
 
-The original inspiration for this project came from the Wikipedia article for the Maxwell-Boltzmann distribution, which has a beautiful animation of both gas particle kinetics and their corresponding probability distribution. Seeing the animation on the Wikipedia page made me want to recreate it as a tribute to one of my favorite topics in chemistry, and to grow my programming skills for creating data visualizations.
+The original inspiration for this project came from the <a href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution"> Wikipedia article </a>, for the Maxwell_Boltzmann distribution, which has a beautiful animation of both gas particle kinetics and their corresponding probability distribution. Seeing that animation on the Wikipedia page made me want to recreate it as a tribute to one of my favorite topics in chemistry, and to grow my programming skills for creating interactive simulations.
 
-Thermometers are essentially speedometers for molecules: when we place a thermometer in a sample, we are getting an estimate of the average speed at which its molecules are colliding.  However, temperature is a macroscopic property: on a molecular level, particles have a range of speeds, some faster and some slower. The average speeds determine the given temperature. The probability of what speeds are present for a single temperature is predicted by the Maxwell-Boltzmann distribution.
+Thermometers are essentially speedometers for molecules. When we place a thermometer in a sample, we are getting an estimate of the average speed at which its molecules are colliding.  However, temperature is a macroscopic property: on a molecular level, particles have a range of speeds, some faster and some slower. The average speeds determine the given temperature. The probability of what speeds are present for a single temperature is predicted by the Maxwell-Boltzmann distribution.
 
 This simple and elegant model, with only one parameter (the degrees of freedom), allows students to see why some chemical reactions, like spoiling milk, happen faster at warmer temperatures, because they have a larger fraction of particles with sufficient energy to react.  With a simple vertical line, we can see the effect of a catalyst on reaction rates, and why some reactions go to completion whereas others remain a dynamic equilibrium of reactants and products.  This vertical line represents the activation energy necessary for reactants to form products, and is a perfect visual representation of the Arrhenius equation:
 
 ln k = ln(constant*f)
-ln k = ln A + ln f; where f is the fraction of molecules with sufficient kinetic energy. Since ln f = -Ea/RT, we have
+ln k = ln A + ln f; where f is the fraction of molecules with sufficient kinetic energy to form products.
+Since ln f = -Ea/RT, we have
 
 ln k = lnA - Ea/RT, or
 
 k = A*e^(-Ea/RT)
 
-where k is the value of rate constant of the reaction, and A, the "pre-exponential factor", is the value of the rate constant if all of the particles were converted to products. The -Ea/RT term reduces the total fraction of particles by some amount which increases with the activation energy required, Ea. The value of RT is equal to the average kinetic energy. Thus the activation energy shows us the fraction of molecules that form products at a given temperature, because they have the sufficient kinetic energy to form products. It is logical that the ratio of the activation energy over the average kinetic energy at a given temperature will give you the fraction of molecules with sufficient energy to form products at a certain temperature.
+where k is the value of rate constant of the reaction, and A, the "pre-exponential factor", is the value of the rate constant if all of the particles were converted to products. The -Ea/RT term reduces the total fraction of particles by some amount. This fraction increases with the activation energy required, Ea: thei higher the Ea, the fewer particles can form products. The value of RT is equal to the average kinetic energy. Thus the activation energy shows us the fraction of molecules that form products at a given temperature, because they have the sufficient kinetic energy to form products. 
 
 Furthermore, since a reaction reaches equilibrium when the forward and reverse rates are equal, then the ratio of forward and reverse rate constants gives us the equilibrium constant. So from that single verticle line on the Maxwell-Boltzmann distribution, we can learn not only how fast the reaction reaches equilibrium, but how much product there will be at equilibrium. So much powerful predictive and conceptual insight comes together so elegantly in this single graph, that it is one of my favorite topics in chemistry.
 
-As described in the Wikipedia article, this distribution was identified empirically by Maxwell in 1860. Collision theory and kinetic molecular theory provide the conceptual frameworks. Boltzmann then developed the mathematical proof (more rigorously than the outline above) showing that this distribution is predicted by the system (of gas particles) maximizing its total entropy (distribution of thermal energy) in three dimensions.
+As described in the Wikipedia article, the Maxwell-Boltzmann distribution was identified empirically by Maxwell in 1860. Collision theory and kinetic molecular theory provide the conceptual frameworks for these calculations. Boltzmann then developed the mathematical proof (more rigorously than the outline above) showing that this distribution is predicted by the system (of gas particles) maximizing its total entropy (distribution of thermal energy) in three dimensions.
 
-Another interesting historical aspect of this discovery is it is the first ever example of the Chi-squared distribution, which is one of the moset extensively used statistical distributions today. The chi-squared distribution is simply the distribution of the square of the standard normal distribution. Where Z ~ N(0,1) then Z^2 = Q ~ Chi-squared. It is a special case of a gamma distribution.
+Another interesting historical aspect of this discovery is that it's the first ever example of the chi-squared distribution, which is one of the moset extensively used statistical distributions today. The chi-squared distribution is simply the distribution of the square of the standard normal distribution. Where Z ~ N(0,1) then Z^2 = Q ~ Chi-squared. 
 
-*Part 1* Teach myself how to use python's animation libraries (plotly; matplotlib) on a single moving object.
+*Part 1* Learn Python's animation libraries (plotly; matplotlib) using random numbers (i.e. not based on physics of collisions).
 
-*Part 2* Write a C library to calculate the particle dynamics
+*Part 2* Write a C library to accurately calculate the particle dynamics (elastic collisions with conservation of energy and momentum), and update their new velocities. 
 
 *Part 3* Combine parts 1 and 2 for a functioning animation of particle collisions in 2D space.
 
+Project progress: Part 1 is complete. Part 3 is partially complete. Part 2 is underway. 
+
 #### Annotated repo contents: files created, decisions made, obstacles encountered, and project outcomes.
 
+ ###### file name: project.py
+ C integration:
+I used python's cytpes library to be able to standardize arrays, floats, and integers between C and python. 
+Arrays are passed by reference to my C library, called in Python. It was necessary to cast my Numpy arrays to 32-bit floats, otherwise the different float sizes created an interesting error where an array with the same pointer address appeared to have different values in C vs Python. In fact it was the different stride length (array element size of 32-bit vs 64-bit) that created this illusion. 
+
+ Animation:
+I researched a variety of Python libaries that supported interactive animations. 
+
  ###### file name: particles.c
-Cosmic ray bit flips are rare events, meaning that they occur singly, while their neighboring bits nearby remain unaffected.
-The C programming language does not have bit-addressable memory. The smallest unit of addressable memory is a byte (8 bits).
-
-Bits can be changed indirectly by mathematical operations. For example, adding or subtracting 1, or mutiplying or dividing by 2. However, these operations will most often change multiple bits per byte, and they are not random.
-
-An input char (one DNA base) is assumed to have any ASCII value between 0 and 255. Several possible strategies were considered to flip a random bit per char (byte), including defining a bit field of size 1, or using bit field operators. I used a bit field operator and some if-then statements to identify the value of a randomly selected bit. I then used binary arithmetic to flip the bit.
-
-For the animation, I wanted to simulate a saturation of random mutagenesis (all chars are flipped once, in random order, but no chars are flipped more than once). I used the Fisher-Yates algorithm to randomize the order of a range of integers. This allowed me select each index (base) of a DNA input once, in random order.
-
 Data types:
 I initially chose an array of structs as my bitflip.c output, in order to include a DNA string field and its corresponding mutated DNA base char index field, for each mutation. I was unable to parse an array of structs in JavaScript, so I refactored the entire project using an array of JSON object strings instead, by including cJSON.h software from a third party. Because JSON objects, like Python dictionaries, do not have inherent order, I was concerned that the mutation order would be lost when parsed with JavaScript, interfering with the animation. However, I learned that order is preserved with JSON object strings in the newest version of JavaScript (ES7) for my use case. Unfortunately, web browsers deploy JavaScript versions unevenly and incompletely, so my program will not animate mutations in the correct order on older web browsers.
 
- ###### file name: app.py
- C integration:
- I researched several options for combining C and Python, including writing a Python extension module for my C functions. The simpler solution of using the ctypes module was sufficient for this project. I created a library of my C functions, and imported them to my flask app using the Python ctypes module.
 
- Animation:
-Flask supports animations through streaming templates, by wrapping a route function around a second generate() function.
- However, this results in an image or string that is continuously appended, rather than an image or string that is replaced in a single location on the page.
-For replacement, I can do something more complicated with flask, or I can send my animation all at once, and control the animation with JS. The documentation and Discord support for Flask was insufficient for me at this time. Instead, I used
-the setTimeout() function combined with HTML elements allowed me to show one DNA string replaced by another, to simulate an animation with JavaScript.
 
 ###### file name: string.js
 I used layout.html to establish common web page features such as the navigation bar. I extended layout.html for specific web page features such as the DNA string 'mutation' animation.
