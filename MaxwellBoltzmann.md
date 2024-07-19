@@ -106,7 +106,7 @@ I imported the Python cytpes library in order to bind my C library functions and
 
 It was necessary to cast my NumPy arrays to 32-bit floats, otherwise the different float sizes created an interesting effect where an array with the same pointer address appeared to have different values in C vs Python. In fact it was the different stride length (array element size of 32-bit vs 64-bit) that created this illusion. 
 
-Each time the frame is updated in the python animate() function, it is passed by reference to C where the new particle positions are calculated. The relationship between the frame rate and the particle speed is controlled in order to illustrate a smooth animation of continuous particle motion. 
+Each time the frame is updated in the python animate() function, it is passed by reference to C where the new particle positions are calculated. The relationship between the frame rate and the particle speed is controlled in order to illustrate a smooth animation of continuous particle motion. The histogram looked best at around 2 frames per second. I needed to know the size of the markers to calculate when they collided, so I found some online code to pin the marker size to the units of the x axis of the scatterplot. Then I chose x unit sizes so that the particle animation would look smooth and continuous for the actual particle speeds, approx. 450 meters/sec for room temperatures. 
 
 ###### file name: particles.c
 CBLAS:  
