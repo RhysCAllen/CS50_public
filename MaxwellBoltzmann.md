@@ -40,7 +40,6 @@ My long-term goal is to be able to write programs that showcase scientific analy
 
 ### Skills previously used during CS50:
     -Writing and binding dynamically linked C libraries to Python
-
 ### Skills new for this project:
     -Model parameters of Maxwell-Boltzmann probability distribution for elastic collisions
     -Using CBLAS, a basic linear algebra library for C, to calculate particle dynamics
