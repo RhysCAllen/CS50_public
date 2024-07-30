@@ -28,7 +28,7 @@ https://github.com/user-attachments/assets/ab136362-2d68-4385-94c4-a565c431d30d
 ### Project Summary
 This repository was submitted in partial fulfllment of the requirements for CS50x: Introduction to Computer Science (Harvard University via edX), 2023. This is the final project for the class.
 
-My long-term programming goal is to learn scientific computing: using the power of computers to create, analyze, and visualize scientific discoveries, especially related to microbiology. I chose to focus on writing web applications for this project in order to combine the speed and power of C, with the data science libraries and web-based visualizations of Python and JavaScript. This project helped me work towards my goals as a scientist and programmer.
+My long-term programming goal is to learn scientific computing: using the power of computers to create, analyze, and visualize scientific discoveries, especially related to microbiology. I chose to focus on writing a web application for this project in order to combine the speed and power of C, with the libraries and web-based visualizations of Python and JavaScript. This project helped me work towards my goals as a scientist and programmer.
 <br>
 <br>
 ### Skills previously used during CS50x:
