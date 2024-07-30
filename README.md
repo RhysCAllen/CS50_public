@@ -8,7 +8,7 @@ The CS50 series of courses at HarvardX are identical to those offered to Harvard
 The curricula and all course content can be viewed <a href="https://cs50.harvard.edu/x/2024/courses/" > here. </a>
 
 CS50 students are encouraged to share their final projects publicly via video and text summaries.  
-However, because final projects are counted towards completion of a graded course,  <a href="https://cs50.harvard.edu/x/2024/honesty/" title="Academic integrity statement and details"> sharing the code is not allowed. </a>  
+However, because final projects are counted towards completion of a graded course,  <a href="https://cs50.harvard.edu/x/2024/honesty/" title="Academic integrity statement and details"> sharing the code publicly is not allowed. </a>  
 <br>
 
 
