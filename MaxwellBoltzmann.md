@@ -91,7 +91,7 @@ __PROJECT STATUS:__ Parts 1 and 3 are complete. Part 2 is underway.
 
 ### Annotated repo contents: files created, decisions made, obstacles encountered, and project outcomes.
 
- ###### file name: project.py
+###### file name: project.py
 Animation:  
 I researched a variety of Python libaries that supported interactive animations. Candidates included manim ("math animations") (Grant Sanderson, <a href="https://www.youtube.com/c/3blue1brown">3Blue1Brown<a>) and bokeh, for interactive Python plots. GUI options including Vulcan, Metal, vpython (GlowScript),  OpenGL, pyqt5 and tkinter. I decided against GUI options and opted for a base case of creating an animated video using matplot.animate (pyplot). This worked well with my stretch goal of adding interactivity with plotly and dash Python libraries, and pytorch for very computationally intensive future projects.  
 
