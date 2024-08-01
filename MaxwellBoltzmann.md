@@ -36,6 +36,8 @@ To view the resulting simulation, open the animation file: \
 ### Project Summary
 This repository will be submitted towards fulfllment of the requirements for CS50P: Introduction to Programming with Python (Harvard University via edX), 2024. This is the final project for the class.
 
+August 2024: Please note this is a work in progress. The front end (visualization and data transfer between C and Python) is completed with random data. The backend (particle dynamics and KD tree for space partitioning of animation frames) is under construction.
+
 My long-term goal is to be able to write programs that showcase scientific analysis, especially related to microbiology. This project allows me to explore the <a href="https://fortran-lang.discourse.group/t/ten-computer-codes-that-transformed-science/595"> famous</a> CBLAS library: basic linear algebra subroutines for C. I also wanted to decide whether JavaScript-based animation (previous project) or desktop-based animation in Python (this project) worked better for me as a programmer. This project is helping me reach my long-term goal to understand and share scientific discoveries via computing. 
 
 ### Skills previously used during CS50:
