@@ -1,6 +1,6 @@
 # CS50_public
 
-#### This repo contains summaries of my final projects for HarvardX CS50x and CS50P.  
+#### This repo contains summaries of my final projects for CS50x and CS50P at HarvardX.  
 <br>
     
 Harvard and MIT created edX in 2012 as a way to offer massively online open courses (MOOCs) free to the public.  
