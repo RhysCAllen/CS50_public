@@ -65,13 +65,13 @@ Thermometers are essentially speedometers for molecules. When we place a thermom
 
 This simple and elegant model, with only one parameter (the degrees of freedom), allows students to see why some chemical reactions, like spoiling milk, happen faster at warmer temperatures, because they have a larger fraction of particles with sufficient energy to react.  With a simple vertical line, we can see the effect of a catalyst on reaction rates, and why some reactions go to completion whereas others remain a dynamic equilibrium of reactants and products.  This vertical line represents the activation energy necessary for reactants to form products, and is a perfect visual representation of the Arrhenius equation:
 
-ln k = ln(constant*f)
-ln k = ln A + ln f; where f is the fraction of molecules with sufficient kinetic energy to form products.
-Since ln f = -Ea/RT, we have
+ln k = ln(constant*f)  
+ln k = ln A + ln f; where f is the fraction of molecules with sufficient kinetic energy to form products.  
+Since ln f = -Ea/RT, we have  
 
-ln k = lnA - Ea/RT, or
+ln k = lnA - Ea/RT, or  
 
-k = A*e^(-Ea/RT)
+k = A*e^(-Ea/RT)  
 
 where k is the value of rate constant of the reaction, and A, the "pre-exponential factor", is the value of the rate constant if all of the particles were converted to products. The -Ea/RT term reduces the total fraction of particles by some amount. This fraction increases with the activation energy required, Ea: thei higher the Ea, the fewer particles can form products. The value of RT is equal to the average kinetic energy. Thus the activation energy shows us the fraction of molecules that form products at a given temperature, because they have the sufficient kinetic energy to form products. 
 
