@@ -1,7 +1,9 @@
 # Maxwell-Boltzmann Animation
 ## Interactive simulation of Maxwell-Boltzmann distribution of kinetic energies of gases
 
-https://github.com/user-attachments/assets/0efe9a2c-95a2-43b6-8339-1d010c4d7bd8
+
+https://github.com/user-attachments/assets/37035235-f71b-4795-a055-3e340e556820
+
 
 ### REQUIREMENTS:
 
