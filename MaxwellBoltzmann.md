@@ -116,7 +116,7 @@ CBLAS:
 The complexity of accessing CBLAS from <a href="https://www.netlib.org/blas/">source files</a> ported in Ubuntu was challenging for me. <a href="https://www.netlib.org/atlas/">ATLAS</a> was a welcome discovery as it greatly simplified and optimized working with CBLAS in codespace. Additionally, ATLAS automatically tunes the CBLAS library to the user's specific machine architecture for maximum performace. 
 
 Data types:  
-I took inspiration from CBLAS on how use pointer arithmetic to access vectors of position and velocity from my 3D particle frame. Vectors (1D arrays) and matrices (multi-dimensional arrays) are the standard units of calculation for linear algebra. The vector is represented as the start (array index), stride (calculated by multiplying dimension lengths) and length (number of elements). This allowed me to access and update particle kinetics by reference rather than copying data. Representing the particle physics algoritms with vectors also made the logic of the program easier to write and to read. 
+I took inspiration from CBLAS and Numerical Recipes on how use pointer arithmetic to access vectors of position and velocity from my 3D particle frame. Vectors (1D arrays) and matrices (multi-dimensional arrays) are the standard units of calculation for linear algebra. The vector is represented as the start (array index), stride (calculated by multiplying dimension lengths) and length (number of elements). This allowed me to access and update particle kinetics by reference rather than copying data. Representing the particle physics algoritms with vectors also made the logic of the program easier to write and to read. 
 
 Particle Dynamics:  
 The physics of particle collisions is very simple if one assumes elastic collisions where kinetic energy and momentum are conserved. However, I would need to understand both the linear algebra of calculating particle dynamics, and also how to computationally manage potentially hundreds of particle interactions per frame. Thankfully I happened to find excellent references for both. 
@@ -135,6 +135,11 @@ https://www.youtube.com/watch?v=eED4bSkYCB8
 
 Linear algebra of elastic particle collisions:  
 https://www.vobarian.com/collisions/2dcollisions2.pdf
+
+Numerical Recipes: a guide to scientific computing by William H. Press, Saul A. Teukolsky, William T. Vetterling and Brian P. Flannery
+Advice and examples for programming mathematical operations such as matrices
+https://numerical.recipes/
+
 
 History and development of the M-B distribution:  
 https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution  
