@@ -123,7 +123,7 @@ The physics of particle collisions is very simple if one assumes elastic collisi
 The linear algebra of elastic particle collisions was described <a href="https://www.vobarian.com/collisions/2dcollisions2.pdf">here</a>. 
 The programming and computation strategies for keeping track of hundreds of independently moving objects in one frame was discussed at a high level <a href="https://www.youtube.com/watch?v=eED4bSkYCB8">here</a>.
 
-I chose the space partitioning technique described, which divides the frame (Cartesian plane plot) into sections iteratively in order to sort which particles are colliding, and which are not. The sorting is accomplished by a K-D tree, and the nodes of the tree are particles that are sent to wall_collision() or particles_collision() for updating their speed and trajectory. 
+I chose the space partitioning technique described, which divides the frame (Cartesian plane plot) into sections iteratively in order to sort which particles are colliding, and which are not. The sorting is accomplished by a K-D tree, and the nodes of the tree are partitions whose particles are sent to wall_collision() or particles_collision() for updating their speed and trajectory. 
 
 ### References
 
@@ -137,7 +137,7 @@ Linear algebra of elastic particle collisions:
 https://www.vobarian.com/collisions/2dcollisions2.pdf
 
 Numerical Recipes: a guide to scientific computing by William H. Press, Saul A. Teukolsky, William T. Vetterling and Brian P. Flannery
-Advice and examples for programming mathematical operations such as matrices
+Advice and examples for programming mathematical operations such as vector and matrix manipulation
 https://numerical.recipes/
 
 
